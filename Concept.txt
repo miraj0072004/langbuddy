@@ -1,0 +1,17 @@
+This is a place where people who are learning languages can have a social hangout and showcase their progress.
+
+After Sign Up and Log in, buttons for Public Area,specific languages one is learning and a drop down to add new languages are shown
+
+Public are is for people to see what others have posted, and interact with those.
+
+clicking a language button takes you to your private area with regards to that language and let's you update progress and make notes. What you post here can be made public or kept private.
+
+public posts can be liked, commented on
+
+Others can visit your profile see the languages you are learning and posts you've made.
+
+They can message you.
+
+Should integrate chat.
+
+Should add a donate button.

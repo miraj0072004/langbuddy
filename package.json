@@ -1,0 +1,11 @@
+{
+  "name": "langbuddy",
+  "version": "0.0.1",
+  "description": "An application to help learn languages",   
+  "repository": {
+    "type": "git",
+    "url": "?.git"
+  },
+  "author": "Miraj Mohajireen"
+  
+}
