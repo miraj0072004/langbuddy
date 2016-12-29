@@ -1,11 +1,14 @@
 {
   "name": "langbuddy",
   "version": "0.0.1",
-  "description": "An application to help learn languages",   
+  "description": "An application to help learn languages",
   "repository": {
     "type": "git",
     "url": "?.git"
   },
-  "author": "Miraj Mohajireen"
-  
+  "author": "Miraj Mohajireen",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.8"
+  }
 }
