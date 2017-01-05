@@ -4,11 +4,14 @@
   "description": "An application to help learn languages",
   "repository": {
     "type": "git",
-    "url": "?.git"
+    "url": "https://github.com/miraj0072004/langbuddy.git"
   },
   "author": "Miraj Mohajireen",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-util": "^3.0.8"
+    "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-util": "^3.0.8",
+    "jquery": "^3.1.1"
   }
 }
