@@ -8,9 +8,11 @@
   },
   "author": "Miraj Mohajireen",
   "devDependencies": {
+    "browser-sync": "^2.18.5",
     "gulp": "^3.9.1",
     "gulp-browserify": "^0.5.1",
     "gulp-concat": "^2.6.1",
+    "gulp-connect-php": "0.0.8",
     "gulp-util": "^3.0.8",
     "jquery": "^3.1.1"
   }
