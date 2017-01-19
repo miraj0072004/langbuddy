@@ -11,7 +11,7 @@ var reload  = browserSync.reload;
 
 jsSources=['components/scripts/temp.js'];
 outputDir = 'builds/development/';
-phpSources= 'builds/development/index.php';
+phpSources= 'builds/development/*.php';
 
 gulp.task('log',function(){    
     gutil.log("Workflows are awesome");

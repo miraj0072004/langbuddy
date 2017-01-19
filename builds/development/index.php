@@ -7,7 +7,7 @@
 </head>
 <body>
     <?php
-       echo  'Hello There cunt fuckers !';
+       echo  'Hello There Yo !';
     ?>
     <div id="divOne">
         <p id="test">One Two</p>
