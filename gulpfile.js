@@ -12,6 +12,7 @@ var reload  = browserSync.reload;
 jsSources=['components/scripts/temp.js'];
 outputDir = 'builds/development/';
 phpSources= 'builds/development/*.php';
+includeSources= 'builds/development/includes/*.inc.php';
 
 gulp.task('log',function(){    
     gutil.log("Workflows are awesome");
@@ -33,10 +34,15 @@ gulp.task('php',function(){
     gulp.src(phpSources);
 });
 
+gulp.task('includes',function(){
+    gulp.src(includeSources);
+});
+
 //watch task
 gulp.task('watch',function(){
     gulp.watch(jsSources,['js-watch']);
     gulp.watch(phpSources,['php-watch']);
+    gulp.watch(includeSources,['include-watch']);
 });
 
 // create a task that ensures the `js` task is complete before
@@ -49,6 +55,13 @@ gulp.task('js-watch', ['js'], function (done) {
 // create a task that ensures the `php` task is complete before
 // reloading browsers
 gulp.task('php-watch', ['php'], function (done) {
+    browserSync.reload();
+    done();
+});
+
+// create a task that ensures the `include` task is complete before
+// reloading browsers
+gulp.task('include-watch', ['includes'], function (done) {
     browserSync.reload();
     done();
 });
