@@ -3,8 +3,8 @@
 class User
 {
     //attributes
-    protected $id=null;
-    protected $user_name=null;
+    protected $id=1;
+    protected $user_name='Miraj';
     protected $email=null;
     protected $password=null;
     protected $date_added=null;

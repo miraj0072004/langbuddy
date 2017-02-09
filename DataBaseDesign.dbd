@@ -57,7 +57,7 @@
             </Location>
             <Size>
               <Width>196 px</Width>
-              <Height>197 px</Height>
+              <Height>214 px</Height>
             </Size>
             <DbOid>
               <Path>lang_buddy.users_tab</Path>
@@ -141,7 +141,7 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>133.5 px</Y>
+                  <Y>145.020304568528 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -151,6 +151,16 @@
                 </CustomProperties>
               </Port>
             </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>-80 px</X>
+                <Y>-46.5 px</Y>
+              </PointD>
+              <PointD>
+                <X>-80 px</X>
+                <Y>-34.9796943664551 px</Y>
+              </PointD>
+            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
               <Path>lang_buddy.user_languages_tab.FK_user_languages_tab_users_tab_id</Path>
@@ -167,8 +177,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>97 px</X>
-                  <Y>0 px</Y>
+                  <X>107 px</X>
+                  <Y>-11.5203056335449 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
@@ -335,7 +345,7 @@
               <Port xsi:type="LinkPort">
                 <Location>
                   <X>142 px</X>
-                  <Y>86.75 px</Y>
+                  <Y>78.25 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
@@ -471,7 +481,7 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>97.5 px</Y>
+                  <Y>48.75 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -482,7 +492,7 @@
               </Port>
               <Port>
                 <Location>
-                  <X>147 px</X>
+                  <X>171.5 px</X>
                   <Y>0 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
@@ -495,16 +505,8 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>130 px</X>
-                <Y>147.5 px</Y>
-              </PointD>
-              <PointD>
-                <X>130 px</X>
-                <Y>31 px</Y>
-              </PointD>
-              <PointD>
-                <X>-303 px</X>
-                <Y>31 px</Y>
+                <X>-278.5 px</X>
+                <Y>98.75 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
@@ -523,8 +525,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>236.5 px</X>
-                  <Y>116.5 px</Y>
+                  <X>214.25 px</X>
+                  <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
@@ -616,7 +618,7 @@
             </CustomProperties>
             <Location>
               <X>570 px</X>
-              <Y>110 px</Y>
+              <Y>190 px</Y>
             </Location>
             <Size>
               <Width>184 px</Width>
@@ -671,7 +673,7 @@
             <BendPoints>
               <PointD>
                 <X>550 px</X>
-                <Y>190.5 px</Y>
+                <Y>270.5 px</Y>
               </PointD>
               <PointD>
                 <X>550 px</X>
@@ -707,7 +709,7 @@
               <Port xsi:type="LinkPort">
                 <Location>
                   <X>229.5 px</X>
-                  <Y>159.5 px</Y>
+                  <Y>239.5 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
@@ -782,7 +784,7 @@
               <Port xsi:type="LinkPort">
                 <Location>
                   <X>0 px</X>
-                  <Y>93.5 px</Y>
+                  <Y>133.5 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Top</Align>
@@ -847,7 +849,7 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>172.75 px</Y>
+                  <Y>187.657360406091 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -872,7 +874,7 @@
               </PointD>
               <PointD>
                 <X>-234 px</X>
-                <Y>-7.25 px</Y>
+                <Y>7.65736040609139 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
@@ -1053,7 +1055,7 @@
               <Port xsi:type="LinkPort">
                 <Location>
                   <X>0 px</X>
-                  <Y>116.5 px</Y>
+                  <Y>108 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Top</Align>
@@ -1118,7 +1120,7 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>98.5 px</Y>
+                  <Y>107 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -1139,7 +1141,7 @@
               </PointD>
               <PointD>
                 <X>-229 px</X>
-                <Y>-81.5 px</Y>
+                <Y>-73 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
@@ -1159,7 +1161,7 @@
               <Port xsi:type="LinkPort">
                 <Location>
                   <X>111.5 px</X>
-                  <Y>270.75 px</Y>
+                  <Y>266.5 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Top</Align>
@@ -1432,10 +1434,10 @@
         </Children>
         <ViewPort>
           <ScaleMode>Free</ScaleMode>
-          <Scale>0.57</Scale>
+          <Scale>0.5057143</Scale>
           <Location>
-            <X>-785.964938580862 px</X>
-            <Y>-161.403515341099 px</Y>
+            <X>-1088.36153277902 px</X>
+            <Y>-199.322011934054 px</Y>
           </Location>
         </ViewPort>
       </Model>

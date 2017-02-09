@@ -26,7 +26,7 @@
 
                 <ul class="nav navbar-nav">
                     <li role="presentation"><a href="#">Public</a></li>
-                    <li role="presentation" ><a href="#">Private</a></li>
+                    <li role="presentation" ><a href="private.php">Private</a></li>
                     
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
