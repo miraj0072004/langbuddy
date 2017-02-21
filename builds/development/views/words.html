@@ -1,0 +1,24 @@
+
+                    <table id="words" class="display" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>Word/Phrase</th>
+                                <th>Meaning</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                while ($word=$r1->fetch())
+                                {
+                                    echo "<tr>
+                                            <td>{$word->getWord()}</td>
+                                            <td>{$word->getMeaning()}</td>
+                                        </tr>";
+                                }
+                            ?> 
+                        </tbody>
+                    </table>                   
+                </div>
+            </div>    
+    </section>
+</ul>

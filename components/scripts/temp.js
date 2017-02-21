@@ -3,5 +3,5 @@ var $;
 $=require('jquery');
 
 
-$("p").prepend("Some prepended text ");
+//$("p").prepend("Some prepended text ");
 

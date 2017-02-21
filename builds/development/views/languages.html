@@ -1,0 +1,67 @@
+<h1>This is your private study area</h1>
+<ul>    
+    <section class="col-sm-12">
+            <div class="col-xs-3"> 
+                <ul class="nav nav-pills nav-stacked" role="tablist">
+                    <?php
+                        //language list
+                        global $tabheaders;
+                        $tabheaders=$r->fetchAll();
+                        $this_page=basename($_SERVER['PHP_SELF']);
+                        foreach ($tabheaders as $row=>$link)
+                        {
+                            if ($this_page=="private.php") //if the private page is arrived at by any means
+                            {
+                                if (isset($_GET['toggle'])) //if the private page is arrived at by clicking the tablist from the words page
+                                {                         
+                                    if ($_GET['toggle']==($link->getLangName())) //setting the selected item active
+                                    {
+                                        echo "<li role='presentation' class='active'>
+                                              <a href='#{$link->getLangName()}' role='tab' data-toggle='tab'>{$link->getLangName()}</a>
+                                              </li>";
+                                    }
+                                    else
+                                    {
+                                        echo "<li role='presentation'>
+                                              <a href='#{$link->getLangName()}' role='tab' data-toggle='tab'>{$link->getLangName()}</a>
+                                              </li>";
+                                    }
+                                }                           
+                                else //if the private page is arrived at by clicking header link
+                                {
+                                    if ($row==0) //setting the first item active
+                                    {
+                                        echo "<li role='presentation' class='active'>
+                                              <a href='#{$link->getLangName()}' role='tab' data-toggle='tab'>{$link->getLangName()}</a>
+                                              </li>";
+                                    }
+                                    else
+                                    {
+                                        echo "<li role='presentation'>
+                                              <a href='#{$link->getLangName()}' role='tab' data-toggle='tab'>{$link->getLangName()}</a>
+                                              </li>";
+                                    }
+                                 }
+                            } //if the words page is arrived at
+                            else
+                            {
+                                if (($link->getId())==$language_id) //setting the chosen language active
+                                {
+                                    echo "<li role='presentation' class='active'>
+                                          <a href='private.php?toggle={$link->getLangName()}' role='tab' >{$link->getLangName()}</a>
+                                          </li>";
+                                }
+                                else
+                                {
+                                    echo "<li role='presentation' >
+                                          <a href='private.php?toggle={$link->getLangName()}' role='tab' >{$link->getLangName()}</a>
+                                          </li>";
+                                }
+                            }
+                           
+                        } 
+                    ?>
+                </ul>
+            </div>
+            <div class="col-xs-9">   
+                <div class="tab-content">

@@ -4,7 +4,7 @@ var $;
 $=require('jquery');
 
 
-$("p").prepend("Some prepended text ");
+//$("p").prepend("Some prepended text ");
 
 
 },{"jquery":2}],2:[function(require,module,exports){

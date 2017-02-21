@@ -1,42 +1,22 @@
-<h1>This is your private study area</h1>
 
-
-<ul>
-
-    
-    <section class="col-sm-12">
-            <div class="col-xs-3"> 
-                <ul class="nav nav-pills nav-stacked" role="tablist">
-                   <?php
-                      //language list
-                       $tabheaders=$r->fetchAll();
-                        foreach ($tabheaders as $row=>$link)
-                        {
-                          //activating the first item on page load
-                           if ($row==0) 
-                           {
-                           echo "<li role='presentation' class='active'>
-                                    <a href='#{$link->getLangName()}' role='tab' data-toggle='tab'>{$link->getLangName()}</a>
-                                  </li>";
-                           }
-                           else
-                           {
-                           echo "<li role='presentation'>
-                                    <a href='#{$link->getLangName()}' role='tab' data-toggle='tab'>{$link->getLangName()}</a>
-                                  </li>";
-                           }
-                            
-                        }
-                    ?>
-                </ul>
-            </div>
-            <div class="col-xs-9">   
-                <div class="tab-content">
                     <?php
                        //language content
                         foreach ($tabheaders as $row=>$link)
                         {
-                          //activating the first item on page load
+                        if (isset ($_GET['toggle'])){
+                          //activating the selected item on page load
+                           if ($_GET['toggle']==$link->getLangName()) 
+                           {
+                               echo "<div class='tab-pane active' id='{$link->getLangName()}' role='tabpanel'>";
+                           }
+                           else
+                           {
+                               echo "<div class='tab-pane' id='{$link->getLangName()}' role='tabpanel'>";
+                           }
+                        }
+                        else
+                        {
+                        //activating the first item on page load
                            if ($row==0) 
                            {
                                echo "<div class='tab-pane active' id='{$link->getLangName()}' role='tabpanel'>";
@@ -45,14 +25,17 @@
                            {
                                echo "<div class='tab-pane' id='{$link->getLangName()}' role='tabpanel'>";
                            }
+                        }
                             
-                            echo "<h3>{$link->getLangName()}</h3>
+                    echo "<h3>{$link->getLangName()}</h3>
                                     <p>You are learning</p>
-                    <!--<div class='container marketing'>-->
+                    <!--<div class='container study items'>-->
                       <!-- Four columns of links-->
                       <div class='row'>
                         <div class='col-lg-3'>
-                          <img class='img-circle' src='images/words.jpg' alt='Words' width='140' height='140'>
+                          <a href='words.php?language_id={$link->getId()}'>
+                              <img class='img-circle' src='images/words.jpg' alt='Words' width='140' height='140'> 
+                          </a>
                           <h2>Words</h2>
                           <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
                           <p><a class='btn btn-default' href='#' role='button'>View details &raquo;</a></p>
@@ -76,9 +59,9 @@
                           <p><a class='btn btn-default' href='#' role='button'>View details &raquo;</a></p>
                         </div><!-- /.col-lg-4 -->
                       </div><!-- /.row -->
-                    <!--</div> --> <!--container-marketing -->                                    
+                    <!--</div> --> <!--container study items -->                                    
                                      
-                                  </div>";
+                      </div>";
                         }
                     ?>
                     
