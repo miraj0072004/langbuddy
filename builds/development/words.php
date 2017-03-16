@@ -28,9 +28,20 @@ $userId=$user->getId();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           // Insert into the database:
+    if (isset($_POST["modifyType"]))
+    {
+        $q = 'UPDATE words_tab set word=:word, meaning=:meaning where user_id=:user_id and language_id = :language_id and id=:id';
+        $stmt = $pdo->prepare($q);
+        $r = $stmt->execute(array(':user_id' => $userId, ':word' => $_POST['word'], ':meaning' => $_POST['meaning'],':language_id'=>$_SESSION['language_id'],':id'=>$_POST['wordId']));
+    }
+    else
+    {
         $q = 'INSERT INTO words_tab (user_id, word, meaning, language_id) VALUES (:user_id, :word, :meaning, :language_id)';
         $stmt = $pdo->prepare($q);
-        $r = $stmt->execute(array(':user_id' => $userId, ':word' => $_POST['word'], ':meaning' => $_POST['meaning'],':language_id'=>$_SESSION['language_id'])); 
+        $r = $stmt->execute(array(':user_id' => $userId, ':word' => $_POST['word'], ':meaning' => $_POST['meaning'],':language_id'=>$_SESSION['language_id']));
+    }
+    
+        
 }
  $q1="select id,word,meaning from words_tab t where t.user_id=$userId and language_id=$language_id";
    

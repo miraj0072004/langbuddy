@@ -22,6 +22,19 @@ $(function()
       
   $('#words').DataTable();
 //  $('#wordInputForm').validator();
+    $('#confirm-delete').on('show.bs.modal', function(e) {
+    $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+});
+
+
+//    $("#words tr").click(function(evt)
+//    {
+//        $("#word").val($(this).find("td:first").val());
+//        //alert("test");
+//    }
+//    );
+    
+    
 });
 </script>  
 </body>

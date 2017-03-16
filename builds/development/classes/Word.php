@@ -18,6 +18,11 @@ class Word
     {
         return $this->meaning;
     }
+    
+    function getId()
+    {
+        return $this->id;
+    }
 }
 
 ?>
