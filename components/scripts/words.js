@@ -3,6 +3,7 @@ var $;
 $=require('jquery');
 
 
+
 //$("p").prepend("Some prepended text ");
 $(function(){
     $("#words tr").click(function(evt)
@@ -25,5 +26,7 @@ $(function(){
         $("#wordInputForm #submit").html("Save");
         $("#wordInputForm").remove("#modifyType");
     });
+    
+    
 }
 );

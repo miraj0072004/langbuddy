@@ -3,8 +3,8 @@
 <footer>
    <div class="container">
        <div class="row footer">
-           <div >
-                <p class="col-xs-offset-3 col-xs-6">Contact information: <a href="mailto:miraj0072004@gmail.com">miraj0072004@gmail.com</a>.</p>
+           <div class="col-xs-offset-3 col-xs-6" >
+                <p >Contact information: <a href="mailto:miraj0072004@gmail.com">miraj0072004@gmail.com</a>.</p>
            </div>
            
        </div>
@@ -16,15 +16,30 @@
 <script src="js/script.js"></script>
 <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
 <script src="https://cdnjs.com/libraries/1000hz-bootstrap-validator"></script>
+<script src="../jquery-ui-1.12.1/jquery-ui.min.js" type="text/javascript"></script>
 <script>
 $(function()
  {
       
   $('#words').DataTable();
+  $('#mediaTable').DataTable(
+      {
+        "columns":
+        [
+            null,
+            null,
+            null,
+            null,
+            { "width": "35%"},  
+            { "width": "45%"},
+            { className: "centerAlign"} 
+        ]
+      }
+  );   
 //  $('#wordInputForm').validator();
-    $('#confirm-delete').on('show.bs.modal', function(e) {
-    $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
-});
+  $('#confirm-delete').on('show.bs.modal', function(e) {
+    $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));        
+  });
 
 
 //    $("#words tr").click(function(evt)
@@ -33,7 +48,8 @@ $(function()
 //        //alert("test");
 //    }
 //    );
-    
+ $( "#mediaTotal" ).spinner({min:0,change: function( event, ui ) {$( "#mediaCompleted" ).spinner( "option", "max", $(this).spinner('value'));}});
+ $( "#mediaCompleted" ).spinner({min:0});  
     
 });
 </script>  

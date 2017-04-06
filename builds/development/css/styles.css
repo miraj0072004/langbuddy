@@ -15,3 +15,15 @@
   margin-right: 10px;
   margin-left: 10px;
 }
+
+.ui-spinner {width: 100%;}
+
+.add-media {width:100%;}
+
+.footer > div {text-align: center;}
+
+.centerAlign { text-align: center;}
+
+.progressBarMargin { margin: 8px;}
+
+.middleAlign {vertical-align: middle}

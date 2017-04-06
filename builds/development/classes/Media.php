@@ -10,6 +10,7 @@ class Media
     protected $description=null;
     protected $user_id=null;
     protected $language_id=null;
+    protected $link=null;
     
     
     function getId()
@@ -29,12 +30,17 @@ class Media
     
     function getCompleted()
     {
-        return $this->c;ompleted
+        return $this->completed;
     }
     
     function getDescription()
     {
         return $this->description;
+    }
+    
+    function getLink()
+    {
+        return $this->link;
     }
     
     

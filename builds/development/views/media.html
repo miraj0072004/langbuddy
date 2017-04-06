@@ -1,0 +1,112 @@
+<div class="row">
+    <section class="col-xs-12">
+            <div>          
+            <h3 style="float:left" class="col-xs-12">Track the Audio/Video material you use </h3>
+            </div> 
+            <form action="media.php" method="post" id="mediaForm">
+                <div class="form-group">
+                    <div class="form-inline-row">
+                        <div class="form-group col-xs-4">
+                            <input type="text" class="form-control" id="mediaName" name="mediaName" placeholder="Name" required>
+                        </div>
+                        <div class="form-group col-xs-8">
+                            <input type="text" class="form-control" id="mediaLink" name="mediaLink" placeholder="url">
+                        </div >
+                        <div  class="form-group col-xs-4" data-tip="Total">
+<!--                          <label for="total">Total</label>-->
+                          <input id="mediaTotal" name="mediaTotal" placeholder="Total" title="Total">
+                        </div>
+<!--
+                        <div class="col-xs-4">
+                            <div class="row">
+                                <div class="form-group col-xs-5 "><label for="completed">Completed:</label></div>
+                                <div  class="form-group col-xs-7">                          
+                                  <input id="mediaCompleted" name="mediaCompleted" placeholder="Completed" title="Completed" required>
+                                </div>
+                            </div>
+                        </div>
+-->
+                        <div  class="form-group col-xs-4">                          
+                                  <input id="mediaCompleted" name="mediaCompleted" placeholder="Completed" title="Completed" required>
+                                </div>
+                        <div class="form-group col-xs-3">
+                            <button type="submit" class="btn btn-primary add-media" id="submit" >Add Media</button>
+                        </div>
+                        <div class="form-group col-xs-1">
+                                                <button type="button" class="btn btn-default" id="clear" disabled>
+                                                    <span class="glyphicon glyphicon-erase"></span>
+                                                </button>
+                        </div>
+                    </div>
+                </div>
+            </form>           
+    </section>
+</div>
+              <br/>
+              <br/>
+              <table id="mediaTable" class="display" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th class="hidden">Id</th>
+                                <th class="hidden">Completed</th>
+                                <th class="hidden">Total</th>
+                                <th class="hidden">Link</th>
+                                <th>Video/Audio</th>
+                                <th>Progress</th>                                
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                while ($media=$r->fetch())
+                                {
+                                   $completedPercentage= round (($media->getCompleted()/$media->getTotalEpisodes()) * 100);
+                                    echo "<tr>
+                                            <td class='hidden'>{$media->getId()}</td>
+                                            <td class='hidden'>{$media->getCompleted()}</td>
+                                            <td class='hidden'>{$media->getTotalEpisodes()}</td>
+                                            <td class='hidden'>{$media->getLink()}</td>
+                                            <td><a target='_blank' href='{$media->getLink()}'>{$media->getName()}</a></td>
+                                            <td>
+                                                <div class='progress progressBarMargin'>
+                                                  <div class='progress-bar progress-bar-success progress-bar-striped' role='progressbar'
+                                                  aria-valuenow='{$completedPercentage}' aria-valuemin='0' aria-valuemax='100' style='width:{$completedPercentage}%'>
+                                                    $completedPercentage % 
+                                                  </div>
+                                                </div>
+                                            </td>
+                                            <td>                                                
+                                                <a href='#' data-href='delete_item.php?deleteItemId=".$media->getId()."&itemType=media' data-toggle='modal' data-target='#confirm-delete'><span class='glyphicon glyphicon-remove-circle' aria-hidden='true'></span></a>
+                                            </td>
+                                        </tr>";
+                                }
+                            ?> 
+                        </tbody>
+                    </table>
+               
+                <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title" id="myModalLabel">Confirm Delete</h4>
+                                </div>
+
+                                <div class="modal-body">
+                                    <p>Are you sure you wanna delete this?</p>
+
+                                    <p class="debug-url"></p>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                    <a class="btn btn-danger btn-ok">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>    
+    </section>
+</ul

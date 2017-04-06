@@ -19,7 +19,7 @@ else
 
 try {    
 
-getUserLanguages($user->getId(),$pdo,$language_id);
+    getUserLanguages($user->getId(),$pdo,$language_id);
         
 } catch (Exception $e) { // Catch generic Exceptions.
     include('views/error.html');

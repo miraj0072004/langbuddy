@@ -9,7 +9,7 @@ var gulp=require ('gulp'),
 var jsSources,outputDir;
 var reload  = browserSync.reload;
 
-jsSources=['components/scripts/temp.js'];
+jsSources=['components/scripts/*.js'];
 outputDir = 'builds/development/';
 phpSources= 'builds/development/*.php';
 htmlSources= 'builds/development/views/*.html';
