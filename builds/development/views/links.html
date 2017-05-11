@@ -1,0 +1,90 @@
+                    
+                        <div class="row">
+                            <section class="col-xs-12" >
+                                <form action="links.php" method="post" data-toggle="validator" id="linksForm">
+                                    <div class="form-group">
+                                        <div class="form-inline-row">
+                                           
+                                            <div class="form-group col-xs-3">
+                                                <input type="text" class="form-control "
+                                                    id="linkName" name="linkName" placeholder="Name/Description" required>
+                                            </div>
+
+                                            <div class="form-group col-xs-6">
+
+                                                <input type="text" class="form-control "
+                                                    id="link" name="link" placeholder="Link" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-primary col-xs-2" id="submit">
+                                                    Save
+                                                </button>
+                                                
+                                            </div>
+                                            <div class="form-group col-xs-1">
+                                                <button type="button" class="btn btn-default" id="clear" disabled>
+                                                    <span class="glyphicon glyphicon-erase"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                               
+                                </form>
+                            </section>
+                        </div>
+                    <br/>
+                    <br/>
+                    
+                    <table id="links" class="display" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th class="hidden">Id</th>
+                                <th class="hidden">LinkName</th>
+                                <th>Link</th>                                                             
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                while ($link=$r->fetch())
+                                {
+                                    echo "<tr>
+                                            <td class='hidden'>{$link->getId()}</td>
+                                            <td class='hidden'>{$link->getLinkName()}</td>
+                                            <td><a target='_blank' href='{$link->getLink()}'>{$link->getLinkName()}</a></td>                                            
+                                            <td>
+                                                
+                                                <a href='#' data-href='delete_item.php?deleteItemId=".$link->getId()."&itemType=link' data-toggle='modal' data-target='#confirm-delete'><span class='glyphicon glyphicon-remove-circle' aria-hidden='true'></span></a>
+                                            </td>
+                                        </tr>";
+                                }
+                            ?> 
+                        </tbody>
+                    </table>
+                    
+                    <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title" id="myModalLabel">Confirm Delete</h4>
+                                </div>
+
+                                <div class="modal-body">
+                                    <p>Are you sure you wanna delete this?</p>
+
+                                    <p class="debug-url"></p>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                    <a class="btn btn-danger btn-ok">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                   
+                </div>
+            </div>    
+    </section>
+</ul>

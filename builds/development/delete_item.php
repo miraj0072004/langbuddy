@@ -38,7 +38,19 @@ if ($_GET['itemType']=='media')
             header("Location: $url");
             exit();
         }
-}    
+}  
+    
+if ($_GET['itemType']=='link')
+{
+    $q="delete from links_tab where id='".$_GET['deleteItemId']."'";
+    $r=$pdo->query($q);
+
+        if ($r) {
+            $url = '/links.php'; // Define the URL.	
+            header("Location: $url");
+            exit();
+        }
+}      
     
 }
 ?>

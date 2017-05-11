@@ -3,6 +3,38 @@ var $;
 
 $=require('jquery');
 
+
+
+//$("p").prepend("Some prepended text ");
+$(function(){
+    $("#links tr").click(function(evt)
+    {
+        $("#linkName").val($(this).find("td:eq(1)").html());
+        $("#link").val($(this).find("td:eq(2) a").html());
+        $("#linksForm #submit").html("Update");
+        $("#linksForm #clear").removeAttr("disabled");
+        $('<input>').attr({type: 'hidden',id: 'linkId',name: 'linkId',value: $(this).find("td:eq(0)").html()}).appendTo('#linksForm');
+        $('<input>').attr({type: 'hidden',id: 'modifyType',name: 'modifyType',value: 'update'}).appendTo('#linksForm');
+        //alert("test");
+    }
+    );
+    
+    $("#linksForm #clear").click(function(evt)
+    {
+        $("#linkName").val("");
+        $("#link").val("");
+        $("#linksForm #clear").attr("disabled",'true');
+        $("#linksForm #submit").html("Save");
+        $("#linksForm").remove("#modifyType");
+    });
+    
+    
+}
+);
+var $;
+
+$=require('jquery');
+
 $(function(){
 
     $("#mediaForm").on("submit",function(form) {
@@ -46,6 +78,43 @@ $(function(){
 );
     
 
+var $;
+
+$=require('jquery');
+
+$(function()
+{
+  $("#todoInputForm").submit(
+    function(e)
+      {
+          e.preventDefault();
+          
+          $.ajax({              
+           url: 'todoSubmit.php',
+           type: 'POST',
+           data: $(this).serialize(),
+           dataType: 'text'           
+          }          
+          ).done(function(response){
+               
+                var data = $.parseJSON(response);
+                $("#toDoJobs tbody").empty();
+                $.each(data,function (index,item)
+                {
+                    var markup=
+                                "<tr><td class='hidden'>index</td><td>"+item[0]+"</td><td>"+item[2]+"</td><td><button type='button' class='btn btn-primary' id='complete'>Mark Complete</button></td><td><a href='#' data-href='delete_item.php?deleteItemId="+index+"&itemType=todo' data-toggle='modal' data-target='#confirm-delete'><span class='glyphicon glyphicon-remove-circle' aria-hidden='true'></span></a></td></tr>";
+                    
+                   $("#toDoJobs tbody").append(markup);  
+                });
+                        
+               
+              
+          }).fail({
+              
+              
+          });
+      }); 
+});
 var $;
 
 $=require('jquery');
