@@ -24,7 +24,8 @@ $(function(){
         $("#link").val("");
         $("#linksForm #clear").attr("disabled",'true');
         $("#linksForm #submit").html("Save");
-        $("#linksForm").remove("#modifyType");
+        $("#linksForm #modifyType").remove();
+        $("#linksForm #linkId").remove();
     });
     
     

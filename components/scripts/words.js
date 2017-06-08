@@ -24,7 +24,8 @@ $(function(){
         $("#meaning").val("");
         $("#wordInputForm #clear").attr("disabled",'true');
         $("#wordInputForm #submit").html("Save");
-        $("#wordInputForm").remove("#modifyType");
+        $("#wordInputForm #modifyType").remove();
+        $("#wordInputForm #wordId").remove();
     });
     
     

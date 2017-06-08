@@ -39,7 +39,8 @@ $(function(){
         $("#mediaCompleted").val("");
         $("#mediaForm #clear").attr("disabled",'true');
         $("#mediaForm #submit").html("Save");
-        $("#mediaForm").remove("#modifyType");
+        $("#mediaForm #modifyType").remove();
+        $("#mediaForm #mediaId").remove();
     });
 }
 );

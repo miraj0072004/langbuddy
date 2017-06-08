@@ -11,12 +11,15 @@
    </div>      
 </footer>
 <!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script> 
 <script src="js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
 <script src="https://cdnjs.com/libraries/1000hz-bootstrap-validator"></script>
 <script src="../jquery-ui-1.12.1/jquery-ui.min.js" type="text/javascript"></script>
+
 <script>
 $(function()
  {
@@ -53,6 +56,14 @@ $(function()
 //    );
  $( "#mediaTotal" ).spinner({min:0,change: function( event, ui ) {$( "#mediaCompleted" ).spinner( "option", "max", $(this).spinner('value'));}});
  $( "#mediaCompleted" ).spinner({min:0});  
+    
+var date = new Date();
+date.setDate(date.getDate()-1);
+
+$('#dateIntendedGroup').datetimepicker({
+  minDate:new Date(),
+  format: 'YYYY-MM-DD'    
+});    
     
 });
 </script>  

@@ -50,7 +50,19 @@ if ($_GET['itemType']=='link')
             header("Location: $url");
             exit();
         }
-}      
+}
+
+if ($_GET['itemType']=='todo')
+{
+    $q="delete from to_do_tab where id='".$_GET['deleteItemId']."'";
+    $r=$pdo->query($q);
+
+        if ($r) {
+            $url = '/todo.php'; // Define the URL.	
+            header("Location: $url");
+            exit();
+        }
+}     
     
 }
 ?>

@@ -15,13 +15,20 @@
                                                     id="goalName" name="goalName" placeholder="Goal" required>
                                             </div>
 
-                                            <div class="form-group col-xs-4">
 
-                                                <input type="text" class="form-control "
-                                                    id="dateIntended" name="dateIntended" placeholder="Date Intended">
+                                           <div class="col-xs-4">
+                                                <div class="form-group">
+                                                   <div id="dateIntendedGroup" class="input-group date">
+                                                    <input type="text" class="form-control "
+                                                        id="dateIntended" name="dateIntended" placeholder="Date Intended" required>
+                                                        <span class="input-group-addon">
+                                                            <span class="glyphicon glyphicon-calendar"></span>
+                                                        </span>
+                                                   </div>
+                                                </div>
                                             </div>
                                             <div class="form-group">
-                                                <button type="submit" class="btn btn-primary col-xs-2" id="addGoal">
+                                                <button type="submit" class="btn btn-primary col-xs-2" id="submit">
                                                     Save
                                                 </button>
                                                 
@@ -54,12 +61,23 @@
                             <?php
                                 while ($todo=$r1->fetch())
                                 {
+                                  
+                                   if ($todo->getStatus()==1)
+                                   {
+                                       $status="btn-success";
+                                       $status_text="Completed";
+                                   }
+                                   else
+                                   {
+                                       $status="btn-primary";
+                                       $status_text="Mark Complete";
+                                   }
                                     echo "<tr>
                                             <td class='hidden'>{$todo->getId()}</td>
                                             <td>{$todo->getGoalName()}</td>
                                             <td>{$todo->getDateIntended()}</td>
                                             <td>
-                                                <button type='button' class='btn btn-primary' id='complete'>                                  Mark Complete    
+                                                <button type='button' class='btn {$status} complete_button' id='complete_{$todo->getId()}'>                                  $status_text   
                                                 </button>
                                             </td>
                                             <td>                                                
