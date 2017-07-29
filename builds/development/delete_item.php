@@ -58,7 +58,15 @@ if ($_GET['itemType']=='todo')
     $r=$pdo->query($q);
 
         if ($r) {
-            $url = '/todo.php'; // Define the URL.	
+            if ($_GET['statusType']=='complete')
+            {
+               $navtab= '#completed';
+            }
+            else
+            {
+               $navtab= '#ongoing';  
+            }
+            $url = "/todo.php$navtab"; // Define the URL.	
             header("Location: $url");
             exit();
         }

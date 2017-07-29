@@ -47,10 +47,18 @@
                     <br/>
                     <br/>
                     
-                    <table id="toDoJobs" class="display" cellspacing="0" width="100%">
+                    <ul class="nav nav-tabs">
+                      <li class="active"><a data-toggle="tab" href="#ongoing">On Going</a></li>
+                      <li><a data-toggle="tab" href="#completed">Completed</a></li>                      
+                    </ul>
+                    
+                    <div class="tab-content">
+                      <div id="ongoing" class="tab-pane fade in active">
+                        <table id="toDoJobs" class="display" cellspacing="0" width="100%">
                         <thead>
                             <tr>
                                 <th class="hidden">Id</th>
+                                <td class='hidden'>userId</td>
                                 <th>Goal</th>
                                 <th>Intended Date</th>
                                 <th>Action</th>                                
@@ -62,18 +70,12 @@
                                 while ($todo=$r1->fetch())
                                 {
                                   
-                                   if ($todo->getStatus()==1)
-                                   {
-                                       $status="btn-success";
-                                       $status_text="Completed";
-                                   }
-                                   else
-                                   {
+                                   
                                        $status="btn-primary";
                                        $status_text="Mark Complete";
-                                   }
-                                    echo "<tr>
+                                       echo "<tr>
                                             <td class='hidden'>{$todo->getId()}</td>
+                                            <td class='hidden'>$userId</td>
                                             <td>{$todo->getGoalName()}</td>
                                             <td>{$todo->getDateIntended()}</td>
                                             <td>
@@ -81,13 +83,58 @@
                                                 </button>
                                             </td>
                                             <td>                                                
-                                                <a href='#' data-href='delete_item.php?deleteItemId=".$todo->getId()."&itemType=todo' data-toggle='modal' data-target='#confirm-delete'><span class='glyphicon glyphicon-remove-circle' aria-hidden='true'></span></a>
+                                                <a href='#' data-href='delete_item.php?deleteItemId=".$todo->getId()."&itemType=todo&statusType=incomplete' data-toggle='modal' data-target='#confirm-delete'><span class='glyphicon glyphicon-remove-circle' aria-hidden='true'></span></a>
                                             </td>
                                         </tr>";
+                                   
+                                    
                                 }
                             ?> 
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                      </div>
+                      <div id="completed" class="tab-pane fade">
+                        <table id="toDoJobsCompleted" class="display" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th class="hidden">Id</th>
+                                <th>Goal</th>
+                                <th>Completed Date</th>
+                                <th>Action</th>                                
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                
+                                while ($todo=$r2->fetch())
+                                {
+                                  
+                                   
+                                       $status="btn-success";
+                                       $status_text="Completed";
+                                        echo "<tr>
+                                            <td class='hidden'>{$todo->getId()}</td>
+                                            <td>{$todo->getGoalName()}</td>
+                                            <td>{$todo->getDateCompleted()}</td>
+                                            <td>
+                                                <button type='button' class='btn {$status} complete_button' id='complete_{$todo->getId()}'>                                  $status_text   
+                                                </button>
+                                            </td>
+                                            <td>                                                
+                                                <a href='#' data-href='delete_item.php?deleteItemId=".$todo->getId()."&itemType=todo&statusType=complete' data-toggle='modal' data-target='#confirm-delete'><span class='glyphicon glyphicon-remove-circle' aria-hidden='true'></span></a>
+                                            </td>
+                                        </tr>";
+                                   
+                                   
+                                }
+                            ?> 
+                            </tbody>
+                        </table>
+                      </div>                      
+                    </div>
+
+                    
                     
                     <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog">

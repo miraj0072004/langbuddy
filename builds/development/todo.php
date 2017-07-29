@@ -43,15 +43,17 @@ $userId=$user->getId();
         
 //}
 
- $q1="select id,goal_name,status,date_intended,date_completed from to_do_tab t where t.user_id=$userId and language_id=$language_id";
-   
-    $r1 = $pdo->query($q1);
+ $q1="select id,goal_name,status,date_intended,date_completed from to_do_tab t where t.user_id=$userId and language_id=$language_id and status='0'";  
+ $r1 = $pdo->query($q1);
+
+ $q2="select id,goal_name,status,date_intended,date_completed from to_do_tab t where t.user_id=$userId and language_id=$language_id and status='1'";  
+ $r2 = $pdo->query($q2);
     
 //    if ($r1 && $r1->rowCount() > 0) {
 
         // Set the fetch mode:
         $r1->setFetchMode(PDO::FETCH_CLASS, 'ToDo');
-
+        $r2->setFetchMode(PDO::FETCH_CLASS, 'ToDo');
         // Records will be fetched in the view:
         include('views/todo.html');
 

@@ -1,11 +1,26 @@
 <?php
-   require('includes/utilities.inc.php');
+require('includes/utilities.inc.php');
+if (isset($_POST['userId']))
+{
+    $userId=$_POST['userId']; 
+}
+else if (isset($_GET['userId']))
+{
+    $userId=$_GET['userId']; 
+}
+    
 
-if (isset($_POST["modifyType"]))
+if (isset($_POST["modifyType"]) )
 {
    $q = 'UPDATE to_do_tab SET goal_name = :goal_name, date_intended = :date_intended where user_id =:user_id and language_id = :language_id and id=:id';
         $stmt = $pdo->prepare($q);
         $r = $stmt->execute(array(':goal_name' => $_POST['goalName'], ':date_intended' => $_POST['dateIntended'],':user_id' => $_POST['userId'],':language_id'=>$_SESSION['language_id'],':id'=>$_POST['toDoId'])); 
+}
+else if (isset($_GET["modifyType"]))
+{
+   $q = 'UPDATE to_do_tab SET status = 1,date_completed=NOW() where id=:id';
+   $stmt = $pdo->prepare($q);
+   $r = $stmt->execute(array(':id'=>$_GET['goalId'])); 
 }
 else
 {
@@ -13,10 +28,12 @@ else
    $stmt = $pdo->prepare($q);
    $r = $stmt->execute(array(':user_id' => $_POST['userId'], ':goal_name' => $_POST['goalName'], ':date_intended' => $_POST['dateIntended'],':language_id'=>$_SESSION['language_id']));  
 }
+
+
    
 
 
-$q= 'select * from to_do_tab t where t.user_id= '.$_POST['userId'].' and t.language_id= '. $_SESSION['language_id'];
+$q= 'select * from to_do_tab t where t.user_id= '.$userId.' and t.language_id= '. $_SESSION['language_id'];
 $r = $pdo->query($q);
 $r->setFetchMode(PDO::FETCH_ASSOC);
 $toDos=array();
