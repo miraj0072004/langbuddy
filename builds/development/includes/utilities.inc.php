@@ -13,6 +13,7 @@ session_start();
 // Check for a user in the session:
 $user = (isset($_SESSION['user'])) ? $_SESSION['user'] : null;
 
+define ('BASE_URL', 'http://localhost:8080/');
 // Create the database connection as a PDO object:
 try { 
 

@@ -7,8 +7,9 @@ include('includes/functions.inc.php');
 // Include the header:
 $pageTitle = 'Your Private Study Area';
 include('includes/header.inc.php');
-$user=new User();
-$_SESSION['user']=$user;
+//create a default user for testing purposes
+//$user=new User(); 
+//$_SESSION['user']=$user;
 $tabheaders;
 
 try {    

@@ -31,10 +31,18 @@
 
                 <ul class="nav navbar-nav">
                     <li role="presentation"><a href="#">Public</a></li>
-                    <li role="presentation" ><a href="private.php">Private</a></li>
+                    
+                    <?php
+                        if ($user!=null)
+                        {
+                            echo '<li role="presentation" ><a href="private.php">Private</a></li>';
+                        }
+                    ?>
+                    
                     
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
+<!--
                    <li role="presentation">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         Logout
@@ -45,6 +53,18 @@
                             <li><a href="#">Contact</a></li>                        
                         </ul>
                     </li>   
+-->
+                    <?php
+                        if ($user!=null)
+                        {
+                            echo '<li role="presentation" ><a href="logout.php">Logout</a></li>';
+                        }
+                        else
+                        {
+                            echo '<li role="presentation" ><a href="register.php">Register</a></li>';
+                            echo '<li role="presentation" ><a href="login.php">Login</a></li>';
+                        }
+                    ?>
                 </ul>
             
         </div>

@@ -1,4 +1,9 @@
-<?php include ('includes/header.inc.php')?>
+<?php
+require ('includes/utilities.inc.php');
+include ('includes/header.inc.php');
+//$userId=$user->getId();
+//    echo "$userId";
+?>
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo doloribus vitae nostrum recusandae provident accusantium porro iste, praesentium commodi. Explicabo tempore suscipit alias quam natus itaque temporibus accusantium, error perferendis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur necessitatibus eaque optio quae repellendus est ipsa, distinctio ut aut tempore enim placeat delectus in quidem, asperiores at, vero cumque. Adipisci?
 bla bla
